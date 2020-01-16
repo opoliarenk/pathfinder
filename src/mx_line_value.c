@@ -1,9 +1,9 @@
 #include "../inc/pathfinder.h"
 
-static int atoi_here(const char *s, int size, int i) {
-    int n = 0;
-    int m = 0;
-    int k = 1;
+static long atoi_here(const char *s, int size, int i) {
+    long n = 0;
+    long m = 0;
+    long k = 1;
     int j = i;
 
     for (i = 1; i < size; i++)
@@ -13,7 +13,7 @@ static int atoi_here(const char *s, int size, int i) {
         m += n;
         k /= 10;
     }
-    if (m > 2147483646 || m == 0)
+    if (m > 2147483646 || m == 0 || size > 10)
         return -1;
     return m;
 }
